@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Diggum Clothing</title>
+<title>The Diggem Clothing</title>
 <style>
   :root{
     --ink:#0F0F0F;
@@ -205,7 +205,7 @@
 <body>
 
 <header>
-  <div class="logo">THE <span>DIGGUM</span></div>
+  <div class="logo">THE <span>DIGGEM</span></div>
   <nav>
     <a href="#shop">Shop</a>
     <a href="#about">About</a>
@@ -261,7 +261,7 @@
     </div>
     <div class="card-body">
       <h3>Digging My Own Grave</h3>
-      <p>Hand-drawn stick figure humor, signature Diggum style.</p>
+      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
       <a href="#" class="btn">View on Amazon</a>
     </div>
   </div>
@@ -304,13 +304,13 @@
 <section class="about" id="about">
   <div class="about-inner">
     <span class="eyebrow">Who We Are</span>
-    <h2>About The Diggum</h2>
-    <p>The Diggum is a one-shirt-at-a-time kind of brand — pulp art, pixel nostalgia, sketchbook style, and jokes that hit a little different. If it's worth a laugh or a second look, it's worth putting on a shirt.</p>
+    <h2>About The Diggem</h2>
+    <p>The Diggem is a one-shirt-at-a-time kind of brand — pulp art, pixel nostalgia, sketchbook style, and jokes that hit a little different. If it's worth a laugh or a second look, it's worth putting on a shirt.</p>
   </div>
 </section>
 
 <footer>
-  &copy; <span id="year"></span> The Diggum Clothing — Shop all designs on <a href="https://www.amazon.com/dp/B0FNS9GH7T">Amazon</a>
+  &copy; <span id="year"></span> The Diggem Clothing — Shop all designs on <a href="https://www.amazon.com/dp/B0FNS9GH7T">Amazon</a>
 </footer>
 
 <script>
