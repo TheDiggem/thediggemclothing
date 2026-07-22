@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Diggum Clothing</title>
+<style>
+  :root{
+    --ink:#0F0F0F;
+    --panel:#1A1A1A;
+    --white:#F5F3EE;
+    --amber:#E8A33D;
+    --line: rgba(245,243,238,0.12);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--ink);
+    color: var(--white);
+    line-height:1.5;
+  }
+  a{color:inherit; text-decoration:none;}
+
+  /* ---- Header ---- */
+  header{
+    display:flex; align-items:center; justify-content:space-between;
+    padding: 22px 6%;
+    position: sticky; top:0; z-index:10;
+    background: rgba(15,15,15,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+  }
+  .logo{
+    font-size: 1.4rem;
+    font-weight:800;
+    letter-spacing:2px;
+    text-transform: uppercase;
+  }
+  .logo span{ color: var(--amber); }
+  nav a{
+    margin-left: 30px;
+    font-weight:600;
+    letter-spacing:1px;
+    font-size:0.82rem;
+    text-transform:uppercase;
+    opacity:0.75;
+  }
+  nav a:hover{ opacity:1; color:var(--amber); }
+
+  /* ---- Hero ---- */
+  .hero{
+    padding: 100px 6% 80px;
+    text-align:center;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero .eyebrow{
+    display:inline-block;
+    font-size:0.78rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color: var(--amber);
+    margin-bottom: 18px;
+    font-weight:700;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight:800;
+    letter-spacing:-1px;
+    line-height:1.05;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .hero p{
+    max-width: 480px;
+    margin: 22px auto 34px;
+    font-size:1.05rem;
+    color:#b5b1a8;
+  }
+  .btn{
+    display:inline-block;
+    background: var(--amber);
+    color: var(--ink);
+    padding: 15px 36px;
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    font-size:0.85rem;
+    border-radius: 3px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+  }
+  .btn:hover{ opacity:0.85; transform: translateY(-2px); }
+
+  /* ---- Section heading ---- */
+  .section-title{
+    text-align:center;
+    padding: 70px 6% 8px;
+  }
+  .section-title .eyebrow{
+    font-size:0.75rem;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    color: var(--amber);
+    font-weight:700;
+  }
+  .section-title h2{
+    font-size: 2rem;
+    font-weight:800;
+    letter-spacing:-0.5px;
+    margin-top:8px;
+  }
+
+  /* ---- Product grid ---- */
+  .grid{
+    display:grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 26px;
+    padding: 36px 6% 90px;
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  .card{
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    display:flex; flex-direction:column;
+    overflow:hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+  }
+  .card:hover{
+    transform: translateY(-5px);
+    border-color: var(--amber);
+  }
+  .card .img-wrap{
+    aspect-ratio: 1 / 1;
+    background: #FAFAF8;
+    display:flex; align-items:center; justify-content:center;
+    overflow:hidden;
+  }
+  .card .img-wrap img{
+    width:100%; height:100%; object-fit:contain;
+    display:block;
+  }
+  .placeholder-note{
+    font-size:0.8rem; color:#888; text-align:center; padding: 0 20px;
+  }
+  .card-body{ padding: 18px 20px 22px; flex:1; display:flex; flex-direction:column; }
+  .card-body h3{
+    font-size: 1.02rem;
+    font-weight:700;
+    letter-spacing:0.2px;
+    margin-bottom:6px;
+  }
+  .card-body p{
+    font-size: 0.86rem;
+    color:#a6a29a;
+    flex:1;
+    margin-bottom:16px;
+  }
+  .card-body .btn{
+    align-self:flex-start;
+    padding: 10px 22px;
+    font-size:0.76rem;
+  }
+
+  /* ---- About ---- */
+  .about{
+    background: var(--panel);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 80px 6%;
+  }
+  .about-inner{
+    max-width: 680px;
+    margin: 0 auto;
+    text-align:center;
+  }
+  .about .eyebrow{
+    font-size:0.75rem; letter-spacing:3px; text-transform:uppercase;
+    color: var(--amber); font-weight:700; display:block; margin-bottom:16px;
+  }
+  .about h2{
+    font-size:1.7rem;
+    font-weight:800;
+    margin-bottom:18px;
+  }
+  .about p{ color:#b5b1a8; font-size:1rem; }
+
+  /* ---- Footer ---- */
+  footer{
+    padding: 36px 6%;
+    text-align:center;
+    font-size:0.78rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    color:#77746c;
+  }
+  footer a{ color: var(--amber); font-weight:700; }
+
+  @media (max-width:600px){
+    nav{ display:none; }
+    header{ justify-content:center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">THE <span>DIGGUM</span></div>
+  <nav>
+    <a href="#shop">Shop</a>
+    <a href="#about">About</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <span class="eyebrow">Graphic Tees &middot; Printed On Demand</span>
+  <h1>Whatever's on our mind ends up on a shirt.</h1>
+  <p>Pulp art, pixel scenes, sketch work, and one-liners that don't take themselves too seriously. New designs dropping all the time.</p>
+  <a href="#shop" class="btn">Shop The Drops</a>
+</section>
+
+<div class="section-title" id="shop">
+  <span class="eyebrow">The Lineup</span>
+  <h2>Latest Designs</h2>
+</div>
+
+<!--
+  PRODUCT GRID — how to add more shirts:
+  1. Duplicate one <div class="card">...</div> block below.
+  2. Set the <img src="img/your-photo.jpg"> to your product photo.
+  3. Update the title, short description, and the href on "View on Amazon"
+     with your real Amazon Merch product link.
+-->
+<div class="grid">
+
+  <div class="card">
+    <div class="img-wrap">
+      <img src="img/retro-space-explorers.jpg" alt="Retro Space Explorers tee">
+    </div>
+    <div class="card-body">
+      <h3>Retro Space Explorers</h3>
+      <p>Vintage sci-fi pulp art tee.</p>
+      <a href="https://www.amazon.com/dp/B0FNS9GH7T" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="img-wrap">
+      <img src="img/dragon-knight-pixel.jpg" alt="Pixel art dragon and knight tee">
+    </div>
+    <div class="card-body">
+      <h3>Dragon vs. Knight</h3>
+      <p>8-bit pixel art fantasy battle, long sleeve.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="img-wrap">
+      <img src="img/digging-own-grave.jpg" alt="Digging My Own Grave tee">
+    </div>
+    <div class="card-body">
+      <h3>Digging My Own Grave</h3>
+      <p>Hand-drawn stick figure humor, signature Diggum style.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="img-wrap">
+      <img src="img/acronym-tee.webp" alt="Acronym text tee">
+    </div>
+    <div class="card-body">
+      <h3>C.U.N.T. Acronym Tee</h3>
+      <p>Bold text-only, dry sense of humor.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="img-wrap">
+      <img src="img/dumpster-mermaid.webp" alt="Dumpster Mermaid tee">
+    </div>
+    <div class="card-body">
+      <h3>Dumpster Mermaid</h3>
+      <p>Retro license-plate style badge graphic.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="img-wrap">
+      <p class="placeholder-note">Add sketch-portrait.jpg here</p>
+    </div>
+    <div class="card-body">
+      <h3>Sketch Portrait Tee</h3>
+      <p>Black &amp; white line-art portrait design.</p>
+      <a href="#" class="btn">View on Amazon</a>
+    </div>
+  </div>
+
+</div>
+
+<section class="about" id="about">
+  <div class="about-inner">
+    <span class="eyebrow">Who We Are</span>
+    <h2>About The Diggum</h2>
+    <p>The Diggum is a one-shirt-at-a-time kind of brand — pulp art, pixel nostalgia, sketchbook style, and jokes that hit a little different. If it's worth a laugh or a second look, it's worth putting on a shirt.</p>
+  </div>
+</section>
+
+<footer>
+  &copy; <span id="year"></span> The Diggum Clothing — Shop all designs on <a href="https://www.amazon.com/dp/B0FNS9GH7T">Amazon</a>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
