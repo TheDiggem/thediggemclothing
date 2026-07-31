@@ -1,442 +1,113 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Diggem Clothing</title>
-<style>
-  :root{
-    --ink:#0F0F0F;
-    --panel:#1A1A1A;
-    --white:#F5F3EE;
-    --amber:#E8A33D;
-    --line: rgba(245,243,238,0.12);
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    font-family: 'Helvetica Neue', Arial, sans-serif;
-    background: var(--ink);
-    color: var(--white);
-    line-height:1.5;
-  }
-  a{color:inherit; text-decoration:none;}
 
-  /* ---- Header ---- */
-  header{
-    display:flex; align-items:center; justify-content:space-between;
-    padding: 22px 6%;
-    position: sticky; top:0; z-index:10;
-    background: rgba(15,15,15,0.92);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid var(--line);
-  }
-  .logo{
-    font-size: 1.4rem;
-    font-weight:800;
-    letter-spacing:2px;
-    text-transform: uppercase;
-  }
-  .logo span{ color: var(--amber); }
-  nav a{
-    margin-left: 30px;
-    font-weight:600;
-    letter-spacing:1px;
-    font-size:0.82rem;
-    text-transform:uppercase;
-    opacity:0.75;
-  }
-  nav a:hover{ opacity:1; color:var(--amber); }
+Go to file
+t
+T
+Name		
+TheDiggem
+TheDiggem
+Add files via upload
+8c9f492
+ · 
+now
+CNAME
+Create CNAME
+7 months ago
+Devil-wom-sihl001.jpg
+Add files via upload
+10 minutes ago
+README.md
+Initial commit
+7 months ago
+acronym-tee..jpg
+Add files via upload
+last week
+acronym-tee.jpg
+Add files via upload
+last week
+cow-girl-sihl001.jpg
+Add files via upload
+10 minutes ago
+devilsh-beauty001.jpg
+Add files via upload
+now
+digging-own-grave.jpg
+Add files via upload
+last week
+dragon-knight-pixel.jpg
+Add files via upload
+last week
+dumpster-mermaid.jpg
+Add files via upload
+last week
+friends.jpg
+Add files via upload
+last week
+full-bush.jpg
+Add files via upload
+6 minutes ago
+index.html
+Update index.html
+18 minutes ago
+just-the-tip001.jpg
+Add files via upload
+10 minutes ago
+life-choices.jpg
+Add files via upload
+last week
+living-the-dream.jpg
+Add files via upload
+last week
+my-tank-top001.jpg
+Add files via upload
+10 minutes ago
+retro-space-explorers.jpg
+Add files via upload
+last week
+sketch-portrait.jpg
+Add files via upload
+last week
+treat-her-with-compassion.jpg
+Add files via upload
+last week
+yolo.jpg
+Add files via upload
+last week
+Repository files navigation
+README
+thediggemclothing
+About
 
-  /* ---- Hero ---- */
-  .hero{
-    padding: 100px 6% 80px;
-    text-align:center;
-    border-bottom: 1px solid var(--line);
-  }
-  .hero .eyebrow{
-    display:inline-block;
-    font-size:0.78rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color: var(--amber);
-    margin-bottom: 18px;
-    font-weight:700;
-  }
-  .hero h1{
-    font-size: clamp(2.4rem, 6vw, 4.2rem);
-    font-weight:800;
-    letter-spacing:-1px;
-    line-height:1.05;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .hero p{
-    max-width: 480px;
-    margin: 22px auto 34px;
-    font-size:1.05rem;
-    color:#b5b1a8;
-  }
-  .btn{
-    display:inline-block;
-    background: var(--amber);
-    color: var(--ink);
-    padding: 15px 36px;
-    font-weight:800;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    font-size:0.85rem;
-    border-radius: 3px;
-    transition: transform 0.15s ease, opacity 0.15s ease;
-  }
-  .btn:hover{ opacity:0.85; transform: translateY(-2px); }
-
-  /* ---- Section heading ---- */
-  .section-title{
-    text-align:center;
-    padding: 70px 6% 8px;
-  }
-  .section-title .eyebrow{
-    font-size:0.75rem;
-    letter-spacing:3px;
-    text-transform:uppercase;
-    color: var(--amber);
-    font-weight:700;
-  }
-  .section-title h2{
-    font-size: 2rem;
-    font-weight:800;
-    letter-spacing:-0.5px;
-    margin-top:8px;
-  }
-
-  /* ---- Product grid ---- */
-  .grid{
-    display:grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 26px;
-    padding: 36px 6% 90px;
-    max-width: 1240px;
-    margin: 0 auto;
-  }
-  .card{
-    background: var(--panel);
-    border: 1px solid var(--line);
-    border-radius: 6px;
-    display:flex; flex-direction:column;
-    overflow:hidden;
-    transition: transform 0.2s ease, border-color 0.2s ease;
-  }
-  .card:hover{
-    transform: translateY(-5px);
-    border-color: var(--amber);
-  }
-  .card .img-wrap{
-    aspect-ratio: 1 / 1;
-    background: #FAFAF8;
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-  }
-  .card .img-wrap img{
-    width:100%; height:100%; object-fit:contain;
-    display:block;
-  }
-  .placeholder-note{
-    font-size:0.8rem; color:#888; text-align:center; padding: 0 20px;
-  }
-  .card-body{ padding: 18px 20px 22px; flex:1; display:flex; flex-direction:column; }
-  .card-body h3{
-    font-size: 1.02rem;
-    font-weight:700;
-    letter-spacing:0.2px;
-    margin-bottom:6px;
-  }
-  .card-body p{
-    font-size: 0.86rem;
-    color:#a6a29a;
-    flex:1;
-    margin-bottom:16px;
-  }
-  .card-body .btn{
-    align-self:flex-start;
-    padding: 10px 22px;
-    font-size:0.76rem;
-  }
-
-  /* ---- About ---- */
-  .about{
-    background: var(--panel);
-    border-top: 1px solid var(--line);
-    border-bottom: 1px solid var(--line);
-    padding: 80px 6%;
-  }
-  .about-inner{
-    max-width: 680px;
-    margin: 0 auto;
-    text-align:center;
-  }
-  .about .eyebrow{
-    font-size:0.75rem; letter-spacing:3px; text-transform:uppercase;
-    color: var(--amber); font-weight:700; display:block; margin-bottom:16px;
-  }
-  .about h2{
-    font-size:1.7rem;
-    font-weight:800;
-    margin-bottom:18px;
-  }
-  .about p{ color:#b5b1a8; font-size:1rem; }
-
-  /* ---- Footer ---- */
-  footer{
-    padding: 36px 6%;
-    text-align:center;
-    font-size:0.78rem;
-    letter-spacing:1px;
-    text-transform:uppercase;
-    color:#77746c;
-  }
-  footer a{ color: var(--amber); font-weight:700; }
-
-  @media (max-width:600px){
-    nav{ display:none; }
-    header{ justify-content:center; }
-  }
-</style>
-</head>
-<body>
-
-<header>
-  <div class="logo">THE <span>DIGGEM</span></div>
-  <nav>
-    <a href="#shop">Shop</a>
-    <a href="#about">About</a>
-  </nav>
-</header>
-
-<section class="hero">
-  <span class="eyebrow">Graphic Tees &middot; Printed On Demand</span>
-  <h1>Whatever's on our mind ends up on a shirt.</h1>
-  <p>Pulp art, pixel scenes, sketch work, and one-liners that don't take themselves too seriously. New designs dropping all the time.</p>
-  <a href="#shop" class="btn">Shop The Drops</a>
-</section>
-
-<div class="section-title" id="shop">
-  <span class="eyebrow">The Lineup</span>
-  <h2>Latest Designs</h2>
-</div>
-
-<!--
-  PRODUCT GRID — how to add more shirts:
-  1. Duplicate one <div class="card">...</div> block below.
-  2. Set the <img src="your-photo.jpg"> to your product photo (upload it to the repo root).
-  3. Update the title, short description, and the href on "View on Amazon"
-     with your real Amazon Merch product link.
--->
-<div class="grid">
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="retro-space-explorers.jpg" alt="Retro Space Explorers tee">
-    </div>
-    <div class="card-body">
-      <h3>Retro Space Explorers</h3>
-      <p>Vintage sci-fi pulp art tee.</p>
-      <a href="https://www.amazon.com/dp/B0FNS9GH7T" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="dragon-knight-pixel.jpg" alt="Pixel art dragon and knight tee">
-    </div>
-    <div class="card-body">
-      <h3>Dragon vs. Knight</h3>
-      <p>8-bit pixel art fantasy battle, long sleeve.</p>
-      <a href="https://a.co/d/0hZh056C" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="digging-own-grave.jpg" alt="Digging My Own Grave tee">
-    </div>
-    <div class="card-body">
-      <h3>Digging My Own Grave</h3>
-      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
-      <a href="https://a.co/d/01ET3s59" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="acronym-tee.jpg" alt="Acronym text tee">
-    </div>
-    <div class="card-body">
-      <h3>C.U.N.T. Acronym Tee</h3>
-      <p>Bold text-only, dry sense of humor.</p>
-      <a href="https://a.co/d/07TXp4Jo" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="dumpster-mermaid.jpg" alt="Dumpster Mermaid tee">
-    </div>
-    <div class="card-body">
-      <h3>Dumpster Mermaid</h3>
-      <p>Retro license-plate style badge graphic.</p>
-      <a href="https://a.co/d/00OMPpRt" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="sketch-portrait.jpg" alt="Sketch Portrait tee">
-    </div>
-    <div class="card-body">
-      <h3>Sketch Portrait Tee</h3>
-      <p>Black &amp; white line-art portrait design.</p>
-      <a href="https://a.co/d/09KAAhio" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="treat-her-with-compassion.jpg" alt="Treat Her With Compassion tee">
-    </div>
-    <div class="card-body">
-      <h3>Treat Her With Compassion</h3>
-      <p>Colorful hand-lettered message tee — look closer, the bold letters spell out a second, cheekier message.</p>
-      <a href="https://a.co/d/0fsVjOFn" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="life-choices.jpg" alt="Life Choices tee">
-    </div>
-    <div class="card-body">
-      <h3>Life Choices</h3>
-      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
-      <a href="https://a.co/d/0dH8aleO" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="yolo.jpg" alt="YOLO tee">
-    </div>
-    <div class="card-body">
-      <h3>YOLO</h3>
-      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
-      <a href="https://a.co/d/0dB5U5Ha" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="friends.jpg" alt="Friends tee">
-    </div>
-    <div class="card-body">
-      <h3>Friends</h3>
-      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
-      <a href="https://a.co/d/0e87S1wJ" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="living-the-dream.jpg" alt="Living the Dream tee">
-    </div>
-    <div class="card-body">
-      <h3>Living the Dream</h3>
-      <p>Hand-drawn stick figure humor, signature Diggem style.</p>
-      <a href="https://a.co/d/0a6s4q9H" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="my-tank-top001.png" alt="My Tank Top tee">
-    </div>
-    <div class="card-body">
-      <h3>My Tank Top.</h3>
-      <p>Bold text with a tank silhouette graphic, dry pun humor.</p>
-      <a href="https://a.co/d/0gjQBWOX" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="devil-pinup001.png" alt="Devilish Beauty tee">
-    </div>
-    <div class="card-body">
-      <h3>Devilish Beauty</h3>
-      <p>Retro pin-up style devil illustration.</p>
-      <a href="https://a.co/d/01Hsldk0" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="full-bush.jpg" alt="Nobody Knows I'm Growing a Full Bush tank top">
-    </div>
-    <div class="card-body">
-      <h3>Nobody Knows I'm Growing a Full Bush</h3>
-      <p>Playful nature pun tank top with rabbit &amp; bush illustration.</p>
-      <a href="https://a.co/d/0f2SdmjQ" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="just-the-tip001.png" alt="Just the Tip tee">
-    </div>
-    <div class="card-body">
-      <h3>Just the Tip?</h3>
-      <p>Silhouette couple graphic, cheeky one-liner.</p>
-      <a href="https://a.co/d/0fqg2fZT" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="cowgirl-silhouette001.png" alt="Cowgirl Silhouette tee">
-    </div>
-    <div class="card-body">
-      <h3>Cowgirl Silhouette</h3>
-      <p>Western attitude retro graphic.</p>
-      <a href="https://a.co/d/0blwlBlV" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="img-wrap">
-      <img src="devil-silhouette.jpg" alt="Devil Silhouette tee">
-    </div>
-    <div class="card-body">
-      <h3>Devil Silhouette</h3>
-      <p>Temptation retro gothic graphic.</p>
-      <a href="https://a.co/d/08aHelBw" class="btn">View on Amazon</a>
-    </div>
-  </div>
-
-</div>
-
-<section class="about" id="about">
-  <div class="about-inner">
-    <span class="eyebrow">Who We Are</span>
-    <h2>About The Diggem</h2>
-    <p>The Diggem is a one-shirt-at-a-time kind of brand — pulp art, pixel nostalgia, sketchbook style, and jokes that hit a little different. If it's worth a laugh or a second look, it's worth putting on a shirt.</p>
-  </div>
-</section>
-
-<footer>
-  &copy; <span id="year"></span> The Diggem Clothing — Shop all designs on <a href="https://www.amazon.com/dp/B0FNS9GH7T">Amazon</a>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
-
-</body>
-</html>
+No description, website, or topics provided.
+Resources
+Readme
+Activity
+Stars
+0 stars
+Watchers
+0 watching
+Forks
+0 forks
+Releases
+No releases published
+Create a new release
+Deployments
+27
+ (27)
+github-pages
+6 minutes ago
+Packages
+No packages published
+Publish your first package
+Contributors
+1
+ (1)
+@TheDiggem
+TheDiggem
+Languages
+HTML
+100%
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Priva
